@@ -1,0 +1,53 @@
+﻿@model IEnumerable<employeeABBeducation.Models.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Eğitim Verecek Eleman Listesi</h1>
+
+<p>
+    <a asp-action="Create">Yeni Kayıt</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeSurname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeDaireBaskanligi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeJob)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeSurname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeDaireBaskanligi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeJob)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.EmployeeID">Değiştir</a> |
+                <a asp-action="Details" asp-route-id="@item.EmployeeID">Detaylar</a> |
+                <a asp-action="Delete" asp-route-id="@item.EmployeeID">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

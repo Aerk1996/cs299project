@@ -1,0 +1,50 @@
+﻿@model employeeABBeducation.Models.Employee
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Ankara Büyükşehir Belediyesi Özel Eğitim Birimi</h1>
+
+<h4>Lütfen Aşağıdaki Formu Doldurunuz</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EmployeeName" class="control-label"></label>
+                <input asp-for="EmployeeName" class="form-control" />
+                <span asp-validation-for="EmployeeName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeSurname" class="control-label"></label>
+                <input asp-for="EmployeeSurname" class="form-control" />
+                <span asp-validation-for="EmployeeSurname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeDaireBaskanligi" class="control-label"></label>
+                <input asp-for="EmployeeDaireBaskanligi" class="form-control" />
+                <span asp-validation-for="EmployeeDaireBaskanligi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeJob" class="control-label"></label>
+                <input asp-for="EmployeeJob" class="form-control" />
+                <span asp-validation-for="EmployeeJob" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kayıt Ol" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-5">
+        <img src="~/abb_amblem.jpg" />
+    </div></div>
+
+    <div>
+        <a asp-action="Index">Eğitim listesine dön</a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
